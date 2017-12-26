@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MKLibrary
 {
+    //Разбить набор треугольников, заданных тремя вершинами, на подмножества подобных треугольников 
+    //(если для какого-то треугольника не будет найдено подобных треугольников, то этот треугольник будет образовывать
+    //подмножество из одного треугольника).
     public class TriangleUtils
     {
         public List<Triangle> Triangles { get; set; }

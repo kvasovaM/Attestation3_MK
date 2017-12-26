@@ -13,9 +13,12 @@ namespace Task_10_1_15
 {
     public partial class Form1 : Form
     {
+        public ArraysHelper helper;
+
         public Form1()
         {
             InitializeComponent();
+            helper = new ArraysHelper();
             openFileDialog.InitialDirectory = Environment.CurrentDirectory;
             DataGridViewUtils.InitGridForArr(InputDGV, 32, false, true, true, true, true);
         }
@@ -77,6 +80,28 @@ namespace Task_10_1_15
                 catch
                 {
                     MessagesUtils.ShowError("Ошибка загрузки данных");
+                }
+            }
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // Преобразуем содержимое DataGridView в массив
+                    int[,] arr = DataGridViewUtils.GridToArray2<int>(InputDGV);
+
+                    // Записываем полученный массив в файл, предварительно
+                    // преобразовав его в строку
+                    FilesUtils.Write(saveFileDialog.FileName, helper.Array2DToStr<int>(arr));
+
+                    //MessagesUtils.Show("Данные сохранены");
+                }
+                catch
+                {
+                    MessagesUtils.ShowError("Ошибка сохранения данных");
                 }
             }
         }

@@ -41,6 +41,8 @@
             this.OpenBTN = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.OutLB = new System.Windows.Forms.ListBox();
+            this.Save = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.InputDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,11 +56,11 @@
             this.Y2,
             this.X3,
             this.Y3});
-            this.InputDGV.Location = new System.Drawing.Point(9, 10);
-            this.InputDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.InputDGV.Location = new System.Drawing.Point(12, 12);
+            this.InputDGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InputDGV.Name = "InputDGV";
             this.InputDGV.RowTemplate.Height = 24;
-            this.InputDGV.Size = new System.Drawing.Size(458, 439);
+            this.InputDGV.Size = new System.Drawing.Size(611, 540);
             this.InputDGV.TabIndex = 0;
             // 
             // X1
@@ -99,10 +101,10 @@
             // 
             // RandomizeBtn
             // 
-            this.RandomizeBtn.Location = new System.Drawing.Point(127, 456);
-            this.RandomizeBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.RandomizeBtn.Location = new System.Drawing.Point(100, 601);
+            this.RandomizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RandomizeBtn.Name = "RandomizeBtn";
-            this.RandomizeBtn.Size = new System.Drawing.Size(110, 28);
+            this.RandomizeBtn.Size = new System.Drawing.Size(147, 34);
             this.RandomizeBtn.TabIndex = 1;
             this.RandomizeBtn.Text = "Randomize";
             this.RandomizeBtn.UseVisualStyleBackColor = true;
@@ -110,10 +112,10 @@
             // 
             // SubmitBTN
             // 
-            this.SubmitBTN.Location = new System.Drawing.Point(241, 456);
-            this.SubmitBTN.Margin = new System.Windows.Forms.Padding(2);
+            this.SubmitBTN.Location = new System.Drawing.Point(322, 601);
+            this.SubmitBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubmitBTN.Name = "SubmitBTN";
-            this.SubmitBTN.Size = new System.Drawing.Size(110, 28);
+            this.SubmitBTN.Size = new System.Drawing.Size(147, 34);
             this.SubmitBTN.TabIndex = 3;
             this.SubmitBTN.Text = "Submit";
             this.SubmitBTN.UseVisualStyleBackColor = true;
@@ -121,10 +123,10 @@
             // 
             // ClearBTN
             // 
-            this.ClearBTN.Location = new System.Drawing.Point(356, 455);
-            this.ClearBTN.Margin = new System.Windows.Forms.Padding(2);
+            this.ClearBTN.Location = new System.Drawing.Point(434, 561);
+            this.ClearBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClearBTN.Name = "ClearBTN";
-            this.ClearBTN.Size = new System.Drawing.Size(110, 28);
+            this.ClearBTN.Size = new System.Drawing.Size(147, 34);
             this.ClearBTN.TabIndex = 4;
             this.ClearBTN.Text = "Clear";
             this.ClearBTN.UseVisualStyleBackColor = true;
@@ -132,9 +134,10 @@
             // 
             // OpenBTN
             // 
-            this.OpenBTN.Location = new System.Drawing.Point(12, 456);
+            this.OpenBTN.Location = new System.Drawing.Point(16, 561);
+            this.OpenBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OpenBTN.Name = "OpenBTN";
-            this.OpenBTN.Size = new System.Drawing.Size(110, 28);
+            this.OpenBTN.Size = new System.Drawing.Size(147, 34);
             this.OpenBTN.TabIndex = 5;
             this.OpenBTN.Text = "Open";
             this.OpenBTN.UseVisualStyleBackColor = true;
@@ -143,23 +146,36 @@
             // OutLB
             // 
             this.OutLB.FormattingEnabled = true;
-            this.OutLB.Location = new System.Drawing.Point(472, 12);
+            this.OutLB.ItemHeight = 16;
+            this.OutLB.Location = new System.Drawing.Point(629, 15);
+            this.OutLB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OutLB.Name = "OutLB";
-            this.OutLB.Size = new System.Drawing.Size(190, 472);
+            this.OutLB.Size = new System.Drawing.Size(252, 580);
             this.OutLB.TabIndex = 6;
+            // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(223, 561);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(147, 34);
+            this.Save.TabIndex = 7;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 493);
+            this.ClientSize = new System.Drawing.Size(899, 669);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.OutLB);
             this.Controls.Add(this.OpenBTN);
             this.Controls.Add(this.ClearBTN);
             this.Controls.Add(this.SubmitBTN);
             this.Controls.Add(this.RandomizeBtn);
             this.Controls.Add(this.InputDGV);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Task 10_1_15";
             ((System.ComponentModel.ISupportInitialize)(this.InputDGV)).EndInit();
@@ -182,6 +198,8 @@
         private System.Windows.Forms.Button OpenBTN;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ListBox OutLB;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
