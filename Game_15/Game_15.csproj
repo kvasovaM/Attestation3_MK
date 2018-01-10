@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3793E8E-DD87-41EA-96B1-388A7E0AB397}</ProjectGuid>
+    <ProjectGuid>{6C562CEE-58FB-4C6A-A7DD-0BFA2079E70C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Task_10_1_15</RootNamespace>
-    <AssemblyName>Task 10_1_15</AssemblyName>
+    <RootNamespace>Game_15</RootNamespace>
+    <AssemblyName>Game_15</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CubiconGame.cs" />
+    <Compile Include="CubiconLevels.cs" />
+    <Compile Include="CubiconLevelsUtils.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,13 +86,6 @@
       <Project>{71a4b18a-87fd-445b-b560-78271fd6bf09}</Project>
       <Name>MKLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UsefulUtils\UsefulUtils.csproj">
-      <Project>{a9027f42-5310-430c-909a-326739585fd9}</Project>
-      <Name>UsefulUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

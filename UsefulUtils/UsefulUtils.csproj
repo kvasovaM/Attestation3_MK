@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{71A4B18A-87FD-445B-B560-78271FD6BF09}</ProjectGuid>
+    <ProjectGuid>{A9027F42-5310-430C-909A-326739585FD9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MKLibrary</RootNamespace>
-    <AssemblyName>MKLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>UsefulUtils</RootNamespace>
+    <AssemblyName>UsefulUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,8 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,18 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="ComandLine.cs" />
-    <Compile Include="Lists.cs" />
-    <Compile Include="Triangle.cs" />
-    <Compile Include="TriangleUtils.cs" />
-    <Compile Include="WorkWith2DArrays.cs" />
-    <Compile Include="WorkWithArrays.cs" />
-    <Compile Include="ArraysHelper.cs" />
-    <Compile Include="Mathematic.cs" />
+    <Compile Include="DataGridViewUtils.cs" />
+    <Compile Include="FilesUtils.cs" />
+    <Compile Include="IOUtils.cs" />
+    <Compile Include="MessagesUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Geometry.cs" />
-    <Compile Include="WorkWithStr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

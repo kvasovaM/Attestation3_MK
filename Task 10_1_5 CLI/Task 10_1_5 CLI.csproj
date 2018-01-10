@@ -52,6 +52,11 @@
       <Project>{71a4b18a-87fd-445b-b560-78271fd6bf09}</Project>
       <Name>MKLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UsefulUtils\UsefulUtils.csproj">
+      <Project>{a9027f42-5310-430c-909a-326739585fd9}</Project>
+      <Name>UsefulUtils</Name>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
