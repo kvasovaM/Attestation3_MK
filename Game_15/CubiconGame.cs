@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Game_15
 {
@@ -33,7 +34,7 @@ namespace Game_15
     }
 
     // Ячейка игрового поля
-    public struct CubiconCell
+    public class CubiconCell
     {
         public int Col { get; set; }
         public int Row { get; set; }
@@ -68,6 +69,115 @@ namespace Game_15
 
             state = CubiconGameState.PLAYING;
         }
+
+        // Пытается переместить игрока в указанном направлении
+        public void Move(CubiconDirection direction)
+        {
+            // Если мы не находимся в состоянии игры, то ничего не делаем
+            if (state != CubiconGameState.PLAYING)
+                return;
+
+            int movementX = 0;
+            int movementY = 0;
+
+            switch (direction)
+            {
+                case CubiconDirection.DOWN:
+                    movementX = 0;
+                    movementY = 1;
+                    break;
+                case CubiconDirection.UP:
+                    movementX = 0;
+                    movementY = -1;
+                    break;
+                case CubiconDirection.LEFT:
+                    movementX = -1;
+                    movementY = 0;
+                    break;
+                case CubiconDirection.RIGHT:
+                    movementX = 1;
+                    movementY = 0;
+                    break;
+            }
+
+            int blockX = CurrentLevel.PlayerCol + movementX;
+            int blockY = CurrentLevel.PlayerRow + movementY;
+
+            if (!CurrentLevel.IsCellIndexesCorrect(blockY, blockX))
+                return;
+
+            CubiconCell player = CurrentLevel[CurrentLevel.PlayerRow, CurrentLevel.PlayerCol];
+            CubiconCell block = CurrentLevel[blockY, blockX];
+
+            if (CurrentLevel[blockY, blockX].State == CubiconCellState.EMPTY)
+            {
+                // Выполняем перемещение
+                block.State = player.State;
+                player.State = CubiconCellState.EMPTY;
+            }
+            else if (IsCellMovable(CurrentLevel[blockY, blockX]))
+            {
+                int targetX = blockX + movementX;
+                int targetY = blockY + movementY;
+
+                if (!CurrentLevel.IsCellIndexesCorrect(targetY, targetX) 
+                    || CurrentLevel[targetY, targetX].State != CubiconCellState.EMPTY)
+                    return;
+
+                CubiconCell target = CurrentLevel[targetY, targetX];
+
+                // Выполняем перемещение
+                target.State = block.State;
+                block.State = player.State;
+                player.State = CubiconCellState.EMPTY;
+            }
+
+            CurrentLevel.PlayerCol = blockX;
+            CurrentLevel.PlayerRow = blockY;
+
+            UpdateGameState();
+        }
+
+        public bool IsCellMovable(CubiconCell cell)
+        {
+            return cell.State == CubiconCellState.BLUE_CELL ||
+                cell.State == CubiconCellState.GREEN_CELL || 
+                cell.State == CubiconCellState.ORANGE_CELL ||
+                cell.State == CubiconCellState.PINK_CELL;
+        }
+
+        private void UpdateGameState()
+        {
+            bool isWin = true;
+
+            for (int r = 0; r < CurrentLevel.RowCount; r++)
+                for (int c = 0; c < CurrentLevel.ColCount; c++)
+                {
+                    CubiconCell cell = CurrentLevel[r, c];
+
+                    if (IsCellMovable(cell) && !HasCellMovableNeighbor(cell))
+                    {
+                        isWin = false;
+                    }
+                }
+
+            if (isWin)
+                state = CubiconGameState.WIN;
+        }
+
+        private bool HasCellMovableNeighbor(CubiconCell cell)
+        {
+            return CheckNeighbor(cell.Row + 1, cell.Col) ||
+                CheckNeighbor(cell.Row - 1, cell.Col) ||
+                CheckNeighbor(cell.Row, cell.Col + 1) ||
+                CheckNeighbor(cell.Row, cell.Col - 1);
+        }
+
+        private bool CheckNeighbor(int row, int col)
+        {
+            return CurrentLevel.IsCellIndexesCorrect(row, col) && IsCellMovable(CurrentLevel[row, col]);
+        }
     }
 
 }
+

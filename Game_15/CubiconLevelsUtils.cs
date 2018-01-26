@@ -51,6 +51,7 @@ namespace Game_15
 
                 for (int j = 0; j < colsCount; j++)
                 {
+                    field[i, j] = new CubiconCell();
                     field[i, j].Row = i;
                     field[i, j].Col = j;
 

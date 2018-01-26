@@ -67,24 +67,28 @@
             this.Level1.Name = "Level1";
             this.Level1.Size = new System.Drawing.Size(181, 26);
             this.Level1.Text = "Level 1";
+            this.Level1.Click += new System.EventHandler(this.MainMenuGameLevel1_Click);
             // 
             // Level2
             // 
             this.Level2.Name = "Level2";
             this.Level2.Size = new System.Drawing.Size(181, 26);
             this.Level2.Text = "Level 2";
+            this.Level2.Click += new System.EventHandler(this.MainMenuGameLevel2_Click);
             // 
             // Level3
             // 
             this.Level3.Name = "Level3";
             this.Level3.Size = new System.Drawing.Size(181, 26);
             this.Level3.Text = "Level 3";
+            this.Level3.Click += new System.EventHandler(this.MainMenuGameLevel3_Click);
             // 
             // Level4
             // 
             this.Level4.Name = "Level4";
             this.Level4.Size = new System.Drawing.Size(181, 26);
-            this.Level4.Text = "Level 4";
+            this.Level4.Text = "Закрыть";
+            this.Level4.Click += new System.EventHandler(this.MainMenuGameExit_Click);
             // 
             // GameState
             // 
@@ -105,6 +109,7 @@
             this.GameField.RowTemplate.Height = 24;
             this.GameField.Size = new System.Drawing.Size(701, 425);
             this.GameField.TabIndex = 2;
+            this.GameField.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GameField_CellPainting);
             // 
             // Form1
             // 
@@ -119,6 +124,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Сubicon game";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameField)).EndInit();

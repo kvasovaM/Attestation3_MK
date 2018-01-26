@@ -68,6 +68,11 @@ namespace Game_15
         {
             field[row, col].State = state;
         }
+
+        public bool IsCellIndexesCorrect(int row, int column)
+        {
+            return row >= 0 && row < RowCount && column >= 0 && column < ColCount;
+        }
     }
 }
 
