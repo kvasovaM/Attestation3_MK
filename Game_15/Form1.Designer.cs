@@ -65,28 +65,28 @@
             // Level1
             // 
             this.Level1.Name = "Level1";
-            this.Level1.Size = new System.Drawing.Size(181, 26);
+            this.Level1.Size = new System.Drawing.Size(141, 26);
             this.Level1.Text = "Level 1";
             this.Level1.Click += new System.EventHandler(this.MainMenuGameLevel1_Click);
             // 
             // Level2
             // 
             this.Level2.Name = "Level2";
-            this.Level2.Size = new System.Drawing.Size(181, 26);
+            this.Level2.Size = new System.Drawing.Size(141, 26);
             this.Level2.Text = "Level 2";
             this.Level2.Click += new System.EventHandler(this.MainMenuGameLevel2_Click);
             // 
             // Level3
             // 
             this.Level3.Name = "Level3";
-            this.Level3.Size = new System.Drawing.Size(181, 26);
+            this.Level3.Size = new System.Drawing.Size(141, 26);
             this.Level3.Text = "Level 3";
             this.Level3.Click += new System.EventHandler(this.MainMenuGameLevel3_Click);
             // 
             // Level4
             // 
             this.Level4.Name = "Level4";
-            this.Level4.Size = new System.Drawing.Size(181, 26);
+            this.Level4.Size = new System.Drawing.Size(141, 26);
             this.Level4.Text = "Закрыть";
             this.Level4.Click += new System.EventHandler(this.MainMenuGameExit_Click);
             // 
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 531);
+            this.ClientSize = new System.Drawing.Size(740, 517);
             this.Controls.Add(this.GameField);
             this.Controls.Add(this.GameState);
             this.Controls.Add(this.MainMenu);

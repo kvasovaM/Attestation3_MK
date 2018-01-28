@@ -23,7 +23,6 @@ namespace Game_15
 
         private CubiconGame game = new CubiconGame();
 
-        // Таблица доступных уровней
         private Dictionary<CubiconCellState, Color> cellsBackgrounds = new Dictionary<CubiconCellState, Color> {
             { CubiconCellState.BORDER, Color.Gray },
             { CubiconCellState.BLUE_CELL, Color.Blue },

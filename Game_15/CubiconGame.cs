@@ -120,7 +120,7 @@ namespace Game_15
                 int targetX = blockX + movementX;
                 int targetY = blockY + movementY;
 
-                if (!CurrentLevel.IsCellIndexesCorrect(targetY, targetX) 
+                if (!CurrentLevel.IsCellIndexesCorrect(targetY, targetX)
                     || CurrentLevel[targetY, targetX].State != CubiconCellState.EMPTY)
                     return;
 
@@ -141,7 +141,7 @@ namespace Game_15
         public bool IsCellMovable(CubiconCell cell)
         {
             return cell.State == CubiconCellState.BLUE_CELL ||
-                cell.State == CubiconCellState.GREEN_CELL || 
+                cell.State == CubiconCellState.GREEN_CELL ||
                 cell.State == CubiconCellState.ORANGE_CELL ||
                 cell.State == CubiconCellState.PINK_CELL;
         }
@@ -167,17 +167,20 @@ namespace Game_15
 
         private bool HasCellMovableNeighbor(CubiconCell cell)
         {
-            return CheckNeighbor(cell.Row + 1, cell.Col) ||
-                CheckNeighbor(cell.Row - 1, cell.Col) ||
-                CheckNeighbor(cell.Row, cell.Col + 1) ||
-                CheckNeighbor(cell.Row, cell.Col - 1);
+            return CheckNeighbor(cell.Row + 1, cell.Col, cell.State) ||
+                CheckNeighbor(cell.Row - 1, cell.Col, cell.State) ||
+                CheckNeighbor(cell.Row, cell.Col + 1, cell.State) ||
+                CheckNeighbor(cell.Row, cell.Col - 1, cell.State);
         }
 
-        private bool CheckNeighbor(int row, int col)
+        private bool CheckNeighbor(int row, int col, CubiconCellState state)
         {
-            return CurrentLevel.IsCellIndexesCorrect(row, col) && IsCellMovable(CurrentLevel[row, col]);
+            return CurrentLevel.IsCellIndexesCorrect(row, col)
+                && IsCellMovable(CurrentLevel[row, col])
+                && CurrentLevel[row, col].State == state;
         }
     }
 
 }
+
 
