@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Game_15
+﻿namespace Game_15
 {
     // Набор возможных состояний игры
     public enum CubiconGameState
@@ -132,8 +125,11 @@ namespace Game_15
                 player.State = CubiconCellState.EMPTY;
             }
 
-            CurrentLevel.PlayerCol = blockX;
-            CurrentLevel.PlayerRow = blockY;
+            if (CurrentLevel[blockY, blockX].State != CubiconCellState.BORDER)
+            {
+                CurrentLevel.PlayerCol = blockX;
+                CurrentLevel.PlayerRow = blockY;
+            }
 
             UpdateGameState();
         }
